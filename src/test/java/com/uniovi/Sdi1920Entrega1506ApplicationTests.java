@@ -311,7 +311,6 @@ public class Sdi1920Entrega1506ApplicationTests {
 	@Test
 	public void PR21() {
 		driver.navigate().to("http://localhost:8090/user/list");
-		String url = driver.getCurrentUrl();
 		PO_LoginView.checkLogIn(driver, PO_Properties.getSPANISH());
 	}
 
@@ -320,7 +319,6 @@ public class Sdi1920Entrega1506ApplicationTests {
 	@Test
 	public void PR22() {
 		driver.navigate().to("http://localhost:8090/publication/list");
-		String url = driver.getCurrentUrl();
 		PO_LoginView.checkLogIn(driver, PO_Properties.getSPANISH());
 	}
 
