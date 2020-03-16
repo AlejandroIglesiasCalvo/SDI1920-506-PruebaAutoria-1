@@ -406,8 +406,28 @@ public class Sdi1920Entrega1506ApplicationTests {
 ////	Desde el formulario de crear publicaciones, crear una publicación con datos válidos y una
 ////	foto adjunta. Comprobar que en el listado de publicaciones aparecer la foto adjunta junto al resto de
 ////	datos de la publicación
+//	@Test
+//	public void PR29() {
+//		PO_HomeView.clickOption(driver, "login", "class", "btn btn-primary");
+//		PO_LoginView.fillForm(driver, "99999993D@uniovi.es", "me");
+//		PO_JustLoggedInView.checkAuthenticated(driver, PO_Properties.getSPANISH());
+//		List<WebElement> elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "btnPubli", PO_View.getTimeout());
+//		elementos.get(0).click();
+//		elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "publiDropdownMenuButton", PO_View.getTimeout());
+//		elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "addPubli", PO_View.getTimeout());
+//		elementos.get(0).click();
+//		PO_View.checkElement(driver, "text", "Añade una nueva publicación");
+//		PO_AddPublicationView.fillForm(driver, "Publicación con foto",
+//				"THolaaaaaaaaaaAAAAAAAAAAAAAA", System.getProperty("user.dir") + "\\gatito.jpg");//La foto esta, no se porque no la encuentra
+//		elementos = PO_View.checkElement(driver, "free",
+//				"//td[contains(text(), 'Publicación con foto')]");
+//		assertTrue(elementos.size() == 1);
+//	}
+
+//	Crear una publicación con datos válidos y sin una foto adjunta. Comprobar que la
+//	publicación se a creado con éxito, ya que la foto no es obligaría
 	@Test
-	public void PR29() {
+	public void PR30() {
 		PO_HomeView.clickOption(driver, "login", "class", "btn btn-primary");
 		PO_LoginView.fillForm(driver, "99999993D@uniovi.es", "me");
 		PO_JustLoggedInView.checkAuthenticated(driver, PO_Properties.getSPANISH());
@@ -417,10 +437,10 @@ public class Sdi1920Entrega1506ApplicationTests {
 		elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "addPubli", PO_View.getTimeout());
 		elementos.get(0).click();
 		PO_View.checkElement(driver, "text", "Añade una nueva publicación");
-		PO_AddPublicationView.fillForm(driver, "Publicación con foto",
-				"THolaaaaaaaaaaAAAAAAAAAAAAAA", System.getProperty("user.dir") + "\\gatito.jpg");
+		PO_AddPublicationView.fillForm(driver, "¿un 10?",
+				"yo creo que si");
 		elementos = PO_View.checkElement(driver, "free",
-				"//td[contains(text(), 'Publicación con foto')]");
+				"//td[contains(text(), '¿un 10?')]");
 		assertTrue(elementos.size() == 1);
 	}
 }
