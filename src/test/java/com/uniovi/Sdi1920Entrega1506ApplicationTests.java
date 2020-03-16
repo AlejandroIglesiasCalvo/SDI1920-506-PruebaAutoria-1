@@ -423,24 +423,49 @@ public class Sdi1920Entrega1506ApplicationTests {
 //				"//td[contains(text(), 'Publicación con foto')]");
 //		assertTrue(elementos.size() == 1);
 //	}
+////	Crear una publicación con datos válidos y sin una foto adjunta. Comprobar que la
+////	publicación se a creado con éxito, ya que la foto no es obligaría
+//	@Test
+//	public void PR30() {
+//		PO_HomeView.clickOption(driver, "login", "class", "btn btn-primary");
+//		PO_LoginView.fillForm(driver, "99999993D@uniovi.es", "me");
+//		PO_JustLoggedInView.checkAuthenticated(driver, PO_Properties.getSPANISH());
+//		List<WebElement> elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "btnPubli", PO_View.getTimeout());
+//		elementos.get(0).click();
+//		elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "publiDropdownMenuButton", PO_View.getTimeout());
+//		elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "addPubli", PO_View.getTimeout());
+//		elementos.get(0).click();
+//		PO_View.checkElement(driver, "text", "Añade una nueva publicación");
+//		PO_AddPublicationView.fillForm(driver, "¿un 10?",
+//				"yo creo que si");
+//		elementos = PO_View.checkElement(driver, "free",
+//				"//td[contains(text(), '¿un 10?')]");
+//		assertTrue(elementos.size() == 1);
+//	}
+////	Mostrar el listado de usuarios y comprobar que se muestran todos los que existen en el
+////	sistema.	
+//	@Test
+//	public void PR31() {
+//		driver.navigate().to("http://localhost:8090/admin/login");
+//		PO_AdminLoginView.fillForm(driver, "admin@email.com", "admin");
+//		PO_AdminLoginView.checkLogIn(driver, PO_Properties.getSPANISH());
+//		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id, 'admin-menu')]/a");
+//		elementos.get(0).click();
+//		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'admin/users')]");
+//		elementos.get(0).click();
+//		PO_AdminLoginView.checkLogIn(driver, PO_Properties.getSPANISH());
+//	}
+////	Ir a la lista de usuarios, borrar el primer usuario de la lista, comprobar que la lista se actualiza
+////	y dicho usuario desaparece
+//	@Test
+//	public void PR32() {
+//		driver.navigate().to("http://localhost:8090/admin/login");
+//		PO_AdminLoginView.fillForm(driver, "admin@email.com", "admin");
+//		PO_AdminLoginView.checkLogIn(driver, PO_Properties.getSPANISH());
+//		List<WebElement> elementos = PO_View.checkElement(driver, "free",
+//				"//td[contains(text(), 'Marta')]/following-sibling::*[2]");//Matamos a marta
+//		elementos.get(0).click();
+//		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Marta", PO_View.getTimeout());
+//	}
 
-//	Crear una publicación con datos válidos y sin una foto adjunta. Comprobar que la
-//	publicación se a creado con éxito, ya que la foto no es obligaría
-	@Test
-	public void PR30() {
-		PO_HomeView.clickOption(driver, "login", "class", "btn btn-primary");
-		PO_LoginView.fillForm(driver, "99999993D@uniovi.es", "me");
-		PO_JustLoggedInView.checkAuthenticated(driver, PO_Properties.getSPANISH());
-		List<WebElement> elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "btnPubli", PO_View.getTimeout());
-		elementos.get(0).click();
-		elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "publiDropdownMenuButton", PO_View.getTimeout());
-		elementos = SeleniumUtils.EsperaCargaPagina(driver, "id", "addPubli", PO_View.getTimeout());
-		elementos.get(0).click();
-		PO_View.checkElement(driver, "text", "Añade una nueva publicación");
-		PO_AddPublicationView.fillForm(driver, "¿un 10?",
-				"yo creo que si");
-		elementos = PO_View.checkElement(driver, "free",
-				"//td[contains(text(), '¿un 10?')]");
-		assertTrue(elementos.size() == 1);
-	}
 }
