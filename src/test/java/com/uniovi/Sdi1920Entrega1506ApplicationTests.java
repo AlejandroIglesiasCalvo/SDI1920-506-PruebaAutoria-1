@@ -394,7 +394,7 @@ public class Sdi1920Entrega1506ApplicationTests {
 //		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//a[contains(@href,'/user/friends')]");
 //		elementos.get(0).click();
 //		// Hacemos click sobre el botón de las publicaciones del amigo 
-//		elementos = PO_View.checkElement(driver, "free", "//td[contains(text(), 'Lucas')]/following-sibling::*[2]");
+//		elementos = PO_View.checkElement(driver, "free", "//td[contains(text(), 'Maria')]/following-sibling::*[2]");
 //		elementos.get(0).click();
 //		// Comprobamos que se lista la publicación
 //		PO_View.checkElement(driver, "free", "//td[contains(text(), 'Prueba Publicación')]");
