@@ -37,6 +37,11 @@
 							th:href="${'/publication/' + f.friend.id}"
 							th:text="#{show.publications}" role="button">Ver
 								Publicaciones</a></td>
+
+						<td th:unless="${f.user.email} != ${loggedInUser.email}"><a
+							class="btn btn-primary"
+							th:href="${'/favoritos/' + f.friend.id}"
+							th:text="Favorito" role="button">Favorito</a></td>
 					</tr>
 				</tbody>
 			</table>

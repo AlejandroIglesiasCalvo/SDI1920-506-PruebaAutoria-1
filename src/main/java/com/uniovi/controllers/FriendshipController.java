@@ -2,16 +2,21 @@ package com.uniovi.controllers;
 
 import java.security.Principal;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.uniovi.entities.Friendship;
+import com.uniovi.entities.Publication;
 import com.uniovi.entities.User;
 import com.uniovi.services.FriendRequestService;
 import com.uniovi.services.FriendshipService;
@@ -42,4 +47,16 @@ public class FriendshipController {
 		return "user/friends";
 	}
 
+	@RequestMapping("/favoritos/{id}")
+	public String addFavorito(Model model, @PathVariable Long id, Pageable pageable) {
+		User user=usersService.getUser(id);
+		model.addAttribute("user", user);//La paginacion
+		return "user/favoritos";
+	}
+	
+	@RequestMapping("/Borrarfavoritos/{id}")
+	public String DeleteFavorito(Model model, @PathVariable Long id, Pageable pageable) {
+		return "user/favoritos";
+	}
 }
+
